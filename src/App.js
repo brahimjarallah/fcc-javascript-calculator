@@ -1,3 +1,5 @@
+/*eslint-disable no-eval */
+
 import React, { Component } from "react"
 import Screen from "./components/Screen"
 import Button from "./components/Button"
@@ -67,9 +69,11 @@ class App extends Component {
           currentNumber += "."
           decimalFlag = true
           this.setState({
-            decimalFlag: true,
+            decimalFlag : decimalFlag
           })
         }
+        break
+        default: this.setState({ currentNumber: "0" })
     }
 
     this.setState({
